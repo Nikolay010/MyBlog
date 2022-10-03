@@ -1,0 +1,11 @@
+- content_for(:title) do
+  .h2 = controller_name.humanize
+
+.row
+  = simple_form_for @category do |f|
+    .col-md-4
+      = f.input :title
+    .col
+      .btn-group.mt-2
+        = f.button :submit, class: "btn btn-success"
+        = link_to "Back", :back, class: "btn btn-danger ms-2"

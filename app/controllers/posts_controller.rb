@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_posts, only: %i[show edit update destroy]
+  before_action :set_posts, only: %i[show edit update delete]
 
   def index
     @posts = Post.all
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     @post.destroy
     redirect_to posts_path, notice: "Post was removed"
   end

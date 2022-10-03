@@ -38,11 +38,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def destroy
-    @category.destroy
-    redirect_to categories_path, notice: "Category was removed"
-  end
-
   private
 
   def categories_params

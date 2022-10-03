@@ -1,0 +1,16 @@
+- content_for(:title) do
+  .h2 = controller_name.humanize
+
+- content_for(:button_link) do
+  = link_to "New", new_category_path, class: "btn btn-success"
+
+table.table.table-bordered
+  thead
+    tr
+      th scope="col"  Title
+      th scope="col"  Action
+  tbody
+    - @categories.each do |category|
+      tr
+        th scope="row" = category.title
+        td = link_to "Edit", edit_category_path(category), class: "btn btn-sm btn-info"

@@ -10,8 +10,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-success.sticky-top.navbar-expand-md
             .li.nav-item
               = link_to 'Categories', categories_path, class: 'nav-link fw-bolder'
             .li.nav-item
-              = link_to 'Posts', posts_path, class: 'nav-link fw-bolder'
-            .li.nav-item
               = button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-dark nav-link text-white'
           - else
             = link_to 'Sign in', new_user_session_path, class: 'btn btn-dark text-white'
