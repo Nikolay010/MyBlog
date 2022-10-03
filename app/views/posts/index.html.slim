@@ -1,0 +1,18 @@
+- content_for(:title) do
+  .h2 = controller_name.humanize
+
+- content_for(:button_link) do
+  = link_to "New", new_post_path, class: "btn btn-dark text-white"
+
+- @posts.each do |post|
+  .card.mt-4
+    .card-header
+      .row
+        .col-md-4
+          = link_to post.title, post_path(post), class: "text-dark"
+        .col.text-end
+          .btn-group-sm
+            = link_to "Delete", post_path(post), method: :delete, class: "btn btn-outline-danger me-1"
+    .card-body
+      = simple_format(post.content)
+      = simple_format(post.shared_url)

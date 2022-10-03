@@ -1,0 +1,20 @@
+- content_for(:title) do
+  .h2 = controller_name.humanize
+
+.card
+  .card-header
+    = @post.title.upcase
+  .card-body
+    .row
+      .col-md-3
+        = @post.content
+    .row
+      .col
+        = @post.shared_url
+      .col.text-end
+        .btn-group-sm
+          = link_to "Edit", edit_post_path(@post), class: "btn btn-outline-primary text-black me-1"
+          = link_to "Back", :back, class: "btn btn-outline-dark"
+  .card-footer
+    .badge.bg-secondary.text-wrap style="width: 6rem;"
+      = @post.created_at.strftime("%d-%m-%Y")

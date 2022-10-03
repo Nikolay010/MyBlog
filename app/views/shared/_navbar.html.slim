@@ -1,0 +1,18 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-success.sticky-top.navbar-expand-md
+  .container-fluid
+    = link_to 'MyBlog', root_path, class: 'navbar-brand'
+    button.navbar-toggler aria-controls='navbarNav' aria-expanded='false' aria-label=('Toggle navigation') data-bs-target='#navbarNav' data-bs-toggle='collapse' type='button'
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse.d-flex.justify-content-end
+      .d-flex.align-items-center.flex-md-row.flex-column
+        .ul.navbar-nav
+          - if current_user
+            .li.nav-item
+              = link_to 'Categories', categories_path, class: 'nav-link fw-bolder'
+            .li.nav-item
+              = link_to 'Posts', posts_path, class: 'nav-link fw-bolder'
+            .li.nav-item
+              = button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-dark nav-link text-white'
+          - else
+            = link_to 'Sign in', new_user_session_path, class: 'btn btn-dark text-white'
+            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-dark text-white ms-2'

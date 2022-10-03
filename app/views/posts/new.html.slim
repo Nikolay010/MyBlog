@@ -1,0 +1,10 @@
+.row
+  .col-md-4
+    = simple_form_for @post do |f|
+      = f.input :title
+      = f.input :content
+      = f.input :shared_url
+  .col
+    .btn-group
+      = f.button :submit, label: "Create"
+      = link_to "Back", :back, class: "btn btn-danger"
