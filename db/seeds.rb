@@ -8,5 +8,6 @@
 
 
 50.times do
-  Post.create title: Faker::Book.title, content: Faker::Beer.name, shared_url: Faker::Internet.url
+  cat = Category.create title: Faker::Name.name
+  Post.create title: Faker::Book.title, content: Faker::Beer.name, shared_url: Faker::Internet.url, category: cat
 end
