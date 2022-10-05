@@ -11,8 +11,7 @@
         .col-md-4
           = link_to post.title, post_path(post), class: "text-dark"
         .col.text-end
-          .btn-group-sm
-            = link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger me-1"
+          = link_to "Delete", post_path(post), method: :delete, class: "btn btn-sm btn-outline-danger me-1"
     .card-body
       = simple_format(post.content)
       = simple_format(post.shared_url)

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_posts, only: %i[show edit update delete]
+  before_action :set_posts, only: %i[show edit update destroy]
 
   def index
     @posts = Post.all
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @post.destroy
     redirect_to posts_path, notice: "Post was removed"
   end
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def posts_params
-    params.require(:Post).permit(:title, :content, :shared_url, :category)
+    params.require(:post).permit(:title, :content, :shared_url, :category)
   end
 
   def set_posts
