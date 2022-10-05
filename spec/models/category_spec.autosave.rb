@@ -19,4 +19,8 @@ describe Category do
     expect(cat.errors[:title]).to include("has already been taken")
     expect(cat).to_not be_valid
   end
+
+  it "test" do 
+    puts "hello"
+  end
 end
