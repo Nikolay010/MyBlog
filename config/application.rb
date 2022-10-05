@@ -10,6 +10,7 @@ module MyBlog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.action_view.raise_on_missing_translations = false
 
     # Configuration for the application, engines, and railties goes here.
     #

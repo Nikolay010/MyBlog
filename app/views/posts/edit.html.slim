@@ -6,8 +6,11 @@
     = link_to "Back", :back, class: "btn btn-dark"
 
 .row
-  = simple_form_for @category do |f|
+  = simple_form_for @post do |f|
     .col-md-4
       = f.input :title
+      = f.input :content
+      = f.input :shared_url
+      = f.association  :category
     .col-md-4.mt-2
       = f.button :submit, class: "btn btn-success"
